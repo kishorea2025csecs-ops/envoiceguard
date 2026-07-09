@@ -175,12 +175,24 @@ function DashboardPage() {
                 ))}
                 {!invoicesQuery.isLoading && invoices.length === 0 && (
                   <tr>
-                    <td colSpan={5} className="px-5 py-12 text-center text-muted-foreground">
-                      No invoices yet.{" "}
-                      <Link to="/upload" className="text-brand underline">
-                        Upload your first
-                      </Link>
-                      .
+                    <td colSpan={5} className="px-5 py-16 text-center">
+                      <div className="mx-auto max-w-sm">
+                        <div className="size-10 rounded-lg bg-brand/10 text-brand grid place-items-center mx-auto mb-3">
+                          <Sparkles className="size-5" />
+                        </div>
+                        <p className="font-medium">Your workspace is empty</p>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          Upload an invoice, or load sample data to explore the fraud engine.
+                        </p>
+                        <div className="mt-4 flex justify-center gap-2">
+                          <Button size="sm" variant="outline" onClick={() => seed.mutate()} disabled={seed.isPending}>
+                            {seed.isPending ? "Loading…" : "Load sample data"}
+                          </Button>
+                          <Link to="/upload">
+                            <Button size="sm">Upload invoice</Button>
+                          </Link>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                 )}
