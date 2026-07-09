@@ -66,6 +66,17 @@ function DashboardPage() {
     onSuccess: (r) => setSummary({ content: r.content, generatedAt: r.generatedAt }),
   });
 
+  const qc = useQueryClient();
+  const seedFn = useServerFn(seedSampleData);
+  const seed = useMutation({
+    mutationFn: async () => seedFn({ data: {} }),
+    onSuccess: () => {
+      toast.success("Sample data loaded");
+      qc.invalidateQueries({ queryKey: ["invoices"] });
+    },
+    onError: (e) => toast.error((e as Error).message),
+  });
+
   return (
     <div className="p-6 lg:p-8 space-y-6 max-w-[1600px] mx-auto">
       <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
