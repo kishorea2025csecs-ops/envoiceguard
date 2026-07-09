@@ -69,7 +69,7 @@ function DashboardPage() {
   const qc = useQueryClient();
   const seedFn = useServerFn(seedSampleData);
   const seed = useMutation({
-    mutationFn: async () => seedFn({ data: {} }),
+    mutationFn: async () => seedFn(),
     onSuccess: () => {
       toast.success("Sample data loaded");
       qc.invalidateQueries({ queryKey: ["invoices"] });
