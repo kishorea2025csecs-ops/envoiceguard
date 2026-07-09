@@ -1,12 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { supabase } from "@/integrations/supabase/client";
 import { AiSummaryCard } from "@/components/ai-summary-card";
 import { RiskBadge } from "@/components/risk-badge";
 import { formatCurrency, formatCompact, formatDate } from "@/lib/format";
 import { summarizeReport } from "@/lib/summarize-report.functions";
+import { seedSampleData } from "@/lib/seed.functions";
+import { toast } from "sonner";
 import {
   ShieldAlert,
   Wallet,
@@ -14,6 +16,7 @@ import {
   AlertTriangle,
   ArrowUpRight,
   TrendingUp,
+  Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
