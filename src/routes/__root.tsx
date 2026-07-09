@@ -62,24 +62,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "InvoiceGuard AI — Real-Time Invoice Fraud Detection" },
+      { title: "InvoiceGuard AI" },
       {
         name: "description",
         content:
           "InvoiceGuard AI protects finance teams from fraudulent invoices. Upload invoices, run AI OCR and fraud scoring, and get instant risk summaries and audit reports.",
       },
-      { property: "og:title", content: "InvoiceGuard AI — Real-Time Invoice Fraud Detection" },
+      { property: "og:title", content: "InvoiceGuard AI" },
       {
         property: "og:description",
         content:
-          "AI-powered invoice fraud detection for finance, AP, and audit teams. OCR extraction, fraud scoring, and AI-summarized reports.",
+          "InvoiceGuard AI protects finance teams from fraudulent invoices. Upload invoices, run AI OCR and fraud scoring, and get instant risk summaries and audit reports.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "InvoiceGuard AI" },
+      { name: "twitter:description", content: "InvoiceGuard AI protects finance teams from fraudulent invoices. Upload invoices, run AI OCR and fraud scoring, and get instant risk summaries and audit reports." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0006875f-724c-4f3c-8fa6-c835df5f35a0" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0006875f-724c-4f3c-8fa6-c835df5f35a0" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
